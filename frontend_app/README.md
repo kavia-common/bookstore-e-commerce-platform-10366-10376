@@ -1,82 +1,42 @@
-# Lightweight React Template for KAVIA
+# Bookstore Frontend (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A responsive React application for a bookstore e-commerce platform. This app implements catalog browsing, product detail, cart, checkout (Stripe-ready), authentication (mock), and order history with a clean layout. Styles follow the placeholder style_guide.md and catalog_page_design_notes.md.
 
-## Features
+Features
+- Catalog with filters, category chips, sorting, and pagination
+- Product detail page with ratings and add-to-cart
+- Cart with quantity updates and order summary
+- Checkout page ready for Stripe Integration (mocked for now)
+- Authentication (mock login/register) and order history
+- Responsive header, search, and footer newsletter
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+Tech
+- React 18, react-router-dom 6
+- Minimal CSS with custom properties in src/index.css
+- Context-based state for Auth and Cart
+- Mock API layer in src/services/api.js (replace with backend API later)
 
-## Getting Started
+Getting Started
+1. Install dependencies:
+   npm install
+2. Optional: Copy .env.example to .env and set:
+   REACT_APP_STRIPE_PUBLISHABLE_KEY=
+   REACT_APP_API_BASE_URL=
+3. Run development server:
+   npm start
+4. Build:
+   npm run build
+5. Tests:
+   npm test
 
-In the project directory, you can run:
+Stripe Integration
+- The checkout page currently simulates a successful checkout.
+- To integrate Stripe:
+  - Install @stripe/stripe-js and @stripe/react-stripe-js
+  - Use getEnv().stripeKey for Stripe loadStripe()
+  - Replace services/api.createCheckoutSession with real backend call
+  - Implement Elements and confirmCardPayment or redirectToCheckout
 
-### `npm start`
-
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Notes
+- Replace placeholder colors, sizes, and component details using the values from assets/style_guide.md once finalized.
+- Use assets/catalog_page_design_notes.md as a structure guide for further refinements.
